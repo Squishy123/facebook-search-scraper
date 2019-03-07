@@ -1,0 +1,16 @@
+{
+  "name": "facebook-search-scraper",
+  "version": "1.0.0",
+  "description": "Gets the facebook names and profile pic of a given search name",
+  "main": "index.js",
+  "repository": "https://github.com/Squishy123/facebook-search-scraper.git",
+  "author": "Christian Wang <christian.gnaw@gmail.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "puppeteer": "^1.13.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
