@@ -4,7 +4,7 @@
 ## Module Functions
 function name | params | description
 - | - | -
-login | browser, page, username, password | logins to facebook using given params
+login | browser, page, username, password | login to facebook using given params
 
 ## Env Variables
 var name | example value

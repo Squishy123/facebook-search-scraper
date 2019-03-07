@@ -14,6 +14,10 @@ require('dotenv').config();
     //go to login page
     await scraper.login(browser, page,
         process.env.FB_USERNAME, process.env.FB_PASSWORD);
+
+    //search 
+    let results = await scraper.search(browser, page, "john wick");
+    console.log(results);
     } catch(err) {
         console.log(err);
     }
