@@ -17,7 +17,7 @@ require('dotenv').config();
         process.env.FB_USERNAME, process.env.FB_PASSWORD);
 
     //search and get results
-    let results = await scraper.search(page, "pokemon");
+    let results = await scraper.search(page, process.env.SEARCH_QUERY);
 
     //export results    
     await fs.writeFile('search.json', JSON.stringify(results), (err, data) => {

@@ -12,3 +12,4 @@ var name | example value
 -|-
 FB_USERNAME |  johndoe@fake
 FB_PASSWORD | 1234
+SEARCH_QUERY | john wick
