@@ -3,8 +3,6 @@
  * Contains the methods/functions for generic facebook search
  */
 
- const puppeteer = require('puppeteer');
-
  //base url for login
  const LOGIN_URL = 'https://www.facebook.com/login/device-based/regular/login/?login_attempt=1&lwv=111';
 
@@ -17,8 +15,6 @@
 const SEARCH_URL = `https://www.facebook.com/search/people/?q=FILL&epa=SEE_MORE`
 
 //search selectors
-const SEARCH_RESULT_SELECTOR = '#BrowseResultsContainer';
-const SEARCH_ITEM_SELECTOR = 'div._4p2o';
 const SEARCH_PIC_SELECTOR = 'a._2ial > img'
 const SEARCH_NAME_SELECTOR = 'a._32mo';
 
@@ -29,7 +25,7 @@ const SEARCH_NAME_SELECTOR = 'a._32mo';
   * @param {String} username 
   * @param {String} password 
   */
- async function login(browser, page, username, password) {
+ async function login(page, username, password) {
     //navigate to login page
     await page.goto(LOGIN_URL);
 
@@ -42,13 +38,12 @@ const SEARCH_NAME_SELECTOR = 'a._32mo';
  }
 
 
-async function search(browser, page, searchQuery) {
+async function search(page, searchQuery) {
     //navigate to search
     await page.goto(SEARCH_URL.replace('FILL', searchQuery));
 
-    let profiles;
     //extract all profiles
-    profiles = await page.$$eval(SEARCH_NAME_SELECTOR, function (names) {
+    let profiles = await page.$$eval(SEARCH_NAME_SELECTOR, function (names) {
         return names.map((n) => {
             return {name: n.textContent, href: n.href}
         });

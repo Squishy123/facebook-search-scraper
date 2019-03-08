@@ -4,7 +4,8 @@
 ## Module Functions
 function name|params|description
 -|-|-
-login | browser, page, username, password | login to facebook using given params
+login |page, username, password | Login to facebook using the given params
+search |page, searchQuery | Make a search on facebook and get the results
 
 ## Env Variables
 var name | example value

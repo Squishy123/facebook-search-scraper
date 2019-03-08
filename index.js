@@ -13,11 +13,11 @@ require('dotenv').config();
     let page = await browser.newPage();
 
     //go to login page
-    await scraper.login(browser, page,
+    await scraper.login(page,
         process.env.FB_USERNAME, process.env.FB_PASSWORD);
 
     //search and get results
-    let results = await scraper.search(browser, page, "john wick");
+    let results = await scraper.search(page, "pokemon");
 
     //export results    
     await fs.writeFile('search.json', JSON.stringify(results), (err, data) => {
